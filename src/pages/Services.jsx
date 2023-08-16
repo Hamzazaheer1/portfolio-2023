@@ -20,7 +20,7 @@ const Services = () => {
     },
   ];
   return (
-    <section className="bg-gray-100 px-5 w-full absolute mt-16">
+    <section className="bg-[#f6fbff] opacity-100 px-5 w-full absolute mt-16">
       <div className="pt-10 space-y-6">
         <div className="flex items-center gap-4">
           <h3 className="text-xl font-bold text-gray-900">SERVICES</h3>

@@ -41,7 +41,7 @@ const About = () => {
   ];
 
   return (
-    <section className="bg-gray-100 px-5 w-full absolute mt-16">
+    <section className="bg-[#f6fbff] opacity-100 px-5 w-full absolute mt-16">
       {/* About */}
       <div className="pt-10 space-y-6">
         <div className="flex items-center gap-4">
@@ -89,29 +89,29 @@ const About = () => {
       </div>
       {/* PROGRAMMING */}
       <div className="pt-10">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 pb-5">
           <h3 className="text-xl font-bold text-gray-900">PROGRAMMING</h3>
           <hr className="bg-gray-800 w-[60%] " />
         </div>
         {data?.map((item, index) => (
           <div key={index + 1}>
             <div class="flex justify-between mb-1">
-              <span class="text-base font-medium text-blue-700">
+              <span class="text-base font-medium text-gray-700">
                 {item.title}
               </span>
-              <span class="text-sm font-medium text-blue-700">
+              <span class="text-sm font-medium text-gray-700">
                 {item.level}%
               </span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div class="bg-blue-600 h-2.5 rounded-full w-[45%]"></div>
+              <div class="bg-gray-600 h-2.5 rounded-full w-[45%]"></div>
             </div>
           </div>
         ))}
       </div>
       {/* EDUCATION */}
       <div className="pt-10">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 pb-5">
           <h3 className="text-xl font-bold text-gray-900">EDUCATION</h3>
           <hr className="bg-gray-800 w-[60%] " />
         </div>
@@ -136,7 +136,7 @@ const About = () => {
       </div>
       {/* Experience */}
       <div className="py-10">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 pb-5">
           <h3 className="text-xl font-bold text-gray-900">EXPERIENCE</h3>
           <hr className="bg-gray-800 w-[60%] " />
         </div>

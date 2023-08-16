@@ -4,7 +4,7 @@ import { BiLogoGmail, BiPhoneCall } from 'react-icons/bi';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 px-5 w-full h-full absolute mt-16">
+    <section className="bg-[#f6fbff] opacity-100 px-5 w-full h-full absolute mt-16">
       <div className="flex flex-col gap-10 mt-10">
         <div className="flex flex-col items-center gap-2">
           <ImLocation className="text-xl" />
