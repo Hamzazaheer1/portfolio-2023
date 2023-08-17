@@ -1,31 +1,63 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [toggleNav, setToggleNav] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="relative">
+      {/* desktop nav */}
       <div className="bg-white w-full absolute z-20">
-        <nav className="px-5 py-2 flex justify-between text-gray-800 text-3xl font-bold">
-          <h1>Hamza</h1>
-          {!toggleNav && (
-            <RxHamburgerMenu
-              onClick={() => setToggleNav(true)}
-              className="cursor-pointer"
-            />
+        <nav className="h-[70px] px-5 py-2 flex justify-between items-center">
+          <h1 className="text-gray-800 text-3xl font-bold">Hamza</h1>
+          {isMobile ? (
+            <div>
+              {!toggleNav ? (
+                <RxHamburgerMenu
+                  onClick={() => setToggleNav(true)}
+                  className="cursor-pointer"
+                />
+              ) : (
+                <RxCross1
+                  onClick={() => setToggleNav(false)}
+                  className="cursor-pointer"
+                />
+              )}
+            </div>
+          ) : (
+            <ul className="flex text-gray-800 font-semibold">
+              <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">
+                <Link to="/portfolio">Portfolio</Link>
+              </li>
+              <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">
+                <Link to="/services">Service</Link>
+              </li>
+              <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
           )}
-          {toggleNav && (
-            <RxCross1
-              onClick={() => setToggleNav(false)}
-              className="cursor-pointer"
-            />
-          )}
-          {/* <ul>
-    <li>Home</li>
-  </ul> */}
         </nav>
       </div>
       {/* mobile nav */}

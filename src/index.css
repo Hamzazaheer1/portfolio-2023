@@ -6,3 +6,16 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.hover-slide {
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
+    padding 0.3s ease;
+  overflow: hidden;
+}
+
+.hover-slide:hover {
+  transform: translateX(10px);
+  background-color: black;
+  color: white;
+}
