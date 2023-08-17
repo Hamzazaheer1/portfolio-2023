@@ -26,19 +26,19 @@ const Navbar = () => {
         <nav className="h-[70px] px-5 py-2 flex justify-between items-center">
           <h1 className="text-gray-800 text-3xl font-bold">Hamza</h1>
           {isMobile ? (
-            <div>
+            <>
               {!toggleNav ? (
                 <RxHamburgerMenu
                   onClick={() => setToggleNav(true)}
-                  className="cursor-pointer"
+                  className="text-4xl cursor-pointer"
                 />
               ) : (
                 <RxCross1
                   onClick={() => setToggleNav(false)}
-                  className="cursor-pointer"
+                  className="text-4xl cursor-pointer"
                 />
               )}
-            </div>
+            </>
           ) : (
             <ul className="flex text-gray-800 font-semibold">
               <li className="px-6 py-2 hover:text-white hover:bg-gray-800 hover:py-2 hover-slide">

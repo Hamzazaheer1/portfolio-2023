@@ -28,13 +28,15 @@ const Services = () => {
         animate={{ y: 0, transition: { duration: 0.4, ease: 'easeOut' } }}
         exit={{ y: '40px', transition: { duration: 1, ease: 'easeIn' } }}
       >
-        <div className="pt-10 space-y-6">
+        <div className="pt-14 space-y-6">
           <div className="flex items-center gap-4">
-            <h3 className="text-xl font-bold text-gray-900">SERVICES</h3>
+            <h3 className="tracking-[0.2em] font-bold text-gray-600">
+              SERVICES
+            </h3>
             <hr className="bg-gray-800 w-[60%] " />
           </div>
         </div>
-        <div className="py-10 grid gap-4">
+        <div className="py-12 grid gap-4">
           {servicesData &&
             servicesData.map((item, index) => (
               <div
