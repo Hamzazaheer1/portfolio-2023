@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from '../components/Modal';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -28,110 +29,116 @@ const Portfolio = () => {
 
   return (
     <section className="bg-[#f6fbff] opacity-100 px-5 w-full absolute mt-16">
-      <div className="py-10 space-y-6">
-        <div className="flex items-center gap-4">
-          <h3 className="text-xl font-bold text-gray-900">PORTFOLIO</h3>
-          <hr className="bg-gray-800 w-[60%] " />
-        </div>
-        {/* gallery */}
-        <div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-                  alt=""
-                  onClick={() => handleModalOpen(singleData)}
-                />
+      <motion.div
+        initial={{ y: '40px' }}
+        animate={{ y: 0, transition: { duration: 0.4, ease: 'easeOut' } }}
+        exit={{ y: '40px', transition: { duration: 1, ease: 'easeIn' } }}
+      >
+        <div className="py-10 space-y-6">
+          <div className="flex items-center gap-4">
+            <h3 className="text-xl font-bold text-gray-900">PORTFOLIO</h3>
+            <hr className="bg-gray-800 w-[60%] " />
+          </div>
+          {/* gallery */}
+          <div>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                    alt=""
+                    onClick={() => handleModalOpen(singleData)}
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+                    alt=""
+                  />
+                </div>
               </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-                  alt=""
-                />
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+                    alt=""
+                  />
+                </div>
               </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-                  alt=""
-                />
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                  alt=""
-                />
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* <Modal /> */}
       {modalOpen && (
         <Modal modalData={modalData} closeModal={() => setModalOpen(false)} />

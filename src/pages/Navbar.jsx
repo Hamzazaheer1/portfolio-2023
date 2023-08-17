@@ -11,8 +11,18 @@ const Navbar = () => {
       <div className="bg-white w-full absolute z-20">
         <nav className="px-5 py-2 flex justify-between text-gray-800 text-3xl font-bold">
           <h1>Hamza</h1>
-          {!toggleNav && <RxHamburgerMenu onClick={() => setToggleNav(true)} />}
-          {toggleNav && <RxCross1 onClick={() => setToggleNav(false)} />}
+          {!toggleNav && (
+            <RxHamburgerMenu
+              onClick={() => setToggleNav(true)}
+              className="cursor-pointer"
+            />
+          )}
+          {toggleNav && (
+            <RxCross1
+              onClick={() => setToggleNav(false)}
+              className="cursor-pointer"
+            />
+          )}
           {/* <ul>
     <li>Home</li>
   </ul> */}
@@ -46,11 +56,13 @@ const Navbar = () => {
             </ul>
             <div className="flex gap-2 text-4xl mt-2">
               <AiFillGithub
+                className="cursor-pointer"
                 onClick={() =>
                   window.open('https://github.com/Hamzazaheer1', '_blank')
                 }
               />
               <AiFillLinkedin
+                className="cursor-pointer"
                 onClick={() =>
                   window.open(
                     'https://www.linkedin.com/in/hamzazaheer1/',
