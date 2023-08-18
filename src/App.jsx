@@ -9,8 +9,10 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
+      const body = document.getElementById('main');
+      body.style.backgroundColor = 'white';
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   return (
@@ -18,10 +20,10 @@ function App() {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <>
+        <div>
           <Navbar />
           <AnimatedRoutes />
-        </>
+        </div>
       )}
     </BrowserRouter>
   );
