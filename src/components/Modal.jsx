@@ -48,10 +48,13 @@ const Modal = ({ modalData, closeModal }) => {
                 </p>
               </div>
               <div className="grid gap-3">
-                {modalData &&
-                  modalData?.imgs.map((item, index) => (
-                    <img key={index + 1} src={item} />
-                  ))}
+                <a
+                  href={modalData?.link}
+                  target="_blank"
+                  className="underline italic"
+                >
+                  {modalData?.link}
+                </a>
               </div>
             </div>
           </div>

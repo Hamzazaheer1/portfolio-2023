@@ -11,21 +11,99 @@ const Portfolio = () => {
     setModalOpen(true);
   };
 
-  const singleData = {
-    HeaderImg:
-      'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-    title: 'First Project',
-    detail:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
-    category: 'Frontend',
-    Date: 'March 20 2022',
-    imgs: [
-      'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-      'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-      'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-      'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-    ],
-  };
+  const portfolioData = [
+    {
+      title: 'Nike Store Replica',
+      img: '/assets/portfolio/first.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/first.JPG',
+        title: 'Nike Store Replica',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://e-commerce-watches.vercel.app/',
+      },
+    },
+    {
+      title: 'EtherLand',
+      img: '/assets/portfolio/second.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/second.JPG',
+        title: 'EtherLand',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://etherland.vercel.app/',
+      },
+    },
+    {
+      title: 'PetBook',
+      img: '/assets/portfolio/third.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/third.JPG',
+        title: 'PetBook',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://pet-book.vercel.app/',
+      },
+    },
+    {
+      title: 'Opensea Clone',
+      img: '/assets/portfolio/fourth.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/fourth.JPG',
+        title: 'Opensea Clone',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://opensea-clone-sage-psi.vercel.app/',
+      },
+    },
+    {
+      title: 'Aptly Ecom',
+      img: '/assets/portfolio/fifth.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/fifth.JPG',
+        title: 'Aptly Ecom',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://amazon-automation-services.vercel.app/',
+      },
+    },
+    {
+      title: 'Coffee Connoisseur',
+      img: '/assets/portfolio/sixth.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/sixth.JPG',
+        title: 'Coffee Connoisseur',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://discover-coffee-stores-next-js.vercel.app/',
+      },
+    },
+    {
+      title: 'Karyana Landing Page',
+      img: '/assets/portfolio/seventh.JPG',
+      data: {
+        HeaderImg: '/assets/portfolio/seventh.JPG',
+        title: 'Karyana Landing Page',
+        detail:
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam atque iure amet hic ipsa odit itaque excepturi? Blanditiis, minus.',
+        category: 'Frontend',
+        Date: 'March 20 2022',
+        link: 'https://karyana.vercel.app/',
+      },
+    },
+  ];
 
   return (
     <section className="bg-[#f6fbff] opacity-100 px-5 w-full absolute mt-16">
@@ -42,100 +120,23 @@ const Portfolio = () => {
             <hr className="bg-gray-800 w-[60%] " />
           </div>
           {/* gallery */}
-          <div className="pt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-            <div className="grid gap-4">
-              <div>
+          <div className="pt-6 grid grid-cols-1 gap-4 md:grid-cols-4">
+            {portfolioData?.map((item, index) => (
+              <div
+                key={index + 1}
+                className="relative cursor-pointer hover:scale-105 duration-300"
+              >
                 <img
                   className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-                  alt=""
-                  onClick={() => handleModalOpen(singleData)}
+                  src={item.img}
+                  alt={item.title}
+                  onClick={() => handleModalOpen(item.data)}
                 />
+                <span className="absolute bottom-1 left-2 font-bold tracking-widest shadow-md bg-black text-white px-2 py-1">
+                  {item.title}
+                </span>
               </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </motion.div>

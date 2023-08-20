@@ -65,9 +65,9 @@ const Navbar = () => {
         <nav className="bg-gray-800 h-screen w-screen text-white absolute z-10 py-16">
           <div className="flex flex-col items-center gap-8 px-6 mt-10">
             <img
-              src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="/assets/hamza.jpg"
               alt="profile"
-              className="rounded-full w-32 h-32"
+              className="rounded-full w-32 h-32 object-cover object-top hover:scale-125 duration-500 ease-in-out"
             />
             <ul className="text-xl text-center font-semibold flex flex-col gap-8">
               <li onClick={() => setToggleNav(false)}>
