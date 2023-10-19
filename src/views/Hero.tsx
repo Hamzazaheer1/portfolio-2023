@@ -2,6 +2,7 @@
 import downloadIcon from '../assets/download-btn-icon.svg';
 import homePageIllustation from '../assets/hero-illustration.svg';
 import homePageImg from '../assets/home-page.svg';
+import {saveAs} from "file-saver";
 
 // components
 import { Button } from '../components';
@@ -17,12 +18,13 @@ import { transition } from '../utils/transition';
 import { fadeIn, scale } from '../utils/variants';
 
 const Hero = () => {
-  function downloadFile(filePath: any, fileName: any) {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.click();
-  }
+  const downloadCV = () => {
+  
+    const cvFilePath = '../assets/HamzaCV.pdf';
+
+    // Use the saveAs function to trigger the download
+    saveAs(cvFilePath, 'Hamza_CV.pdf');
+  };
 
   return (
     <div
@@ -71,7 +73,7 @@ const Hero = () => {
             className="my-12 flex flex-col sm:flex-row items-center gap-6 justify-center xl:justify-start"
           >
             <Button secondary>Hire me</Button>
-            <Button icon={downloadIcon}>Download CV</Button>
+            <Button icon={downloadIcon} onClick={downloadCV}>Download CV</Button>
           </motion.div>
         </div>
 
