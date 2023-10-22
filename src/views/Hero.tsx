@@ -2,7 +2,6 @@
 import downloadIcon from '../assets/download-btn-icon.svg';
 import homePageIllustation from '../assets/hero-illustration.svg';
 import homePageImg from '../assets/home-page.svg';
-import {saveAs} from "file-saver";
 
 // components
 import { Button } from '../components';
@@ -17,13 +16,24 @@ import { motion } from 'framer-motion';
 import { transition } from '../utils/transition';
 import { fadeIn, scale } from '../utils/variants';
 
-const Hero = () => {
-  const downloadCV = () => {
-  
-    const cvFilePath = '../assets/HamzaCV.pdf';
+import facebookIcon from '../assets/facebook-icon.svg';
+import instagramIcon from '../assets/instagram-icon.svg';
+import twitterIcon from '../assets/twitter-icon.svg';
+import youtubeIcon from '../assets/youtube-icon.svg';
 
-    // Use the saveAs function to trigger the download
-    saveAs(cvFilePath, 'Hamza_CV.pdf');
+// components
+import { SocialMediaIcon } from '../components';
+import { Link } from 'react-scroll';
+
+const Hero = () => {
+  const handleDownload = () => {
+    const pdfUrl = '/HamzaCV.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Hamza_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -72,8 +82,25 @@ const Hero = () => {
             viewport={{ once: false }}
             className="my-12 flex flex-col sm:flex-row items-center gap-6 justify-center xl:justify-start"
           >
-            <Button secondary>Hire me</Button>
-            <Button icon={downloadIcon} onClick={downloadCV}>Download CV</Button>
+            <Link to="contact" smooth>
+              <Button secondary>Hire me</Button>
+            </Link>
+            <Button icon={downloadIcon} onClick={handleDownload}>
+              Download CV
+            </Button>
+          </motion.div>
+          <motion.div
+            variants={fadeIn('up')}
+            transition={transition()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            className="flex items-center justify-center xl:justify-start gap-6"
+          >
+            <SocialMediaIcon imgSrc={facebookIcon} title="Facebook" />
+            <SocialMediaIcon imgSrc={instagramIcon} title="Instagram" />
+            <SocialMediaIcon imgSrc={twitterIcon} title="Twitter" />
+            <SocialMediaIcon imgSrc={youtubeIcon} title="YouTube" />
           </motion.div>
         </div>
 

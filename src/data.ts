@@ -1,9 +1,9 @@
-import uiUxOne from "./assets/ui-ux-project-one.svg";
-import uiUxTwo from "./assets/ui-ux-project-two.svg";
-import uiUxThree from "./assets/ui-ux-project-three.svg";
-import webOne from "./assets/web-project-one.jpeg";
-import webTwo from "./assets/web-project-two.jpeg";
-import webThree from "./assets/web-project-three.jpeg";
+import uiUxOne from './assets/ui-ux-project-one.svg';
+import uiUxThree from './assets/ui-ux-project-three.svg';
+import uiUxTwo from './assets/ui-ux-project-two.svg';
+import webOne from './assets/web-project-one.jpeg';
+import webThree from './assets/web-project-three.jpeg';
+import webTwo from './assets/web-project-two.jpeg';
 
 interface Project {
   id: number;
@@ -15,38 +15,38 @@ interface Project {
 export const projects: Project[] = [
   {
     id: 0,
-    category: "uiUx",
+    category: 'uiUx',
     img: uiUxOne,
-    title: "UI/UX Web Template",
+    title: 'UI/UX Web Template',
   },
   {
     id: 1,
-    category: "uiUx",
+    category: 'uiUx',
     img: uiUxTwo,
-    title: "UI/UX Tablet Template",
+    title: 'UI/UX Tablet Template',
   },
   {
     id: 2,
-    category: "uiUx",
+    category: 'uiUx',
     img: uiUxThree,
-    title: "Solar System App Design",
+    title: 'Solar System App Design',
   },
   {
     id: 3,
-    category: "web",
+    category: 'web',
     img: webOne,
-    title: "Interior Design Website",
+    title: 'Interior Design Website',
   },
   {
     id: 4,
-    category: "web",
+    category: 'web',
     img: webTwo,
-    title: "Agency Landing Page",
+    title: 'Agency Landing Page',
   },
   {
     id: 5,
-    category: "web",
+    category: 'web',
     img: webThree,
-    title: "Crypto Landing Page",
+    title: 'Crypto Landing Page',
   },
 ];

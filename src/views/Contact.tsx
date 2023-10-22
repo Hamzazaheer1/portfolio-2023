@@ -1,16 +1,20 @@
 // assets
-import contactPageImg from "../assets/contact-page.svg";
-import contactIllustration from "../assets/contact-illustration.svg";
+import contactPageImg from '../assets/contact-page.svg';
+import contactIllustration from '../assets/contact-illustration.svg';
 
 // components
-import { Button, LabelInput, Reveal } from "../components";
+import { Reveal } from '../components';
 
 // framer-motion
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 // utils
-import { fadeIn, scale } from "../utils/variants";
-import { transition } from "../utils/transition";
+import { fadeIn, scale } from '../utils/variants';
+import { transition } from '../utils/transition';
+
+// icons
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import CallIcon from '@mui/icons-material/Call';
 
 const Contact = () => {
   return (
@@ -19,9 +23,9 @@ const Contact = () => {
       className="min-h-screen flex items-center justify-center relative"
       style={{
         background: `url(${contactPageImg})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
     >
       <div
@@ -51,27 +55,50 @@ const Contact = () => {
         </div>
 
         <motion.div
-          variants={fadeIn("up")}
+          variants={fadeIn('up')}
           transition={transition()}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
           className="flex-1 flex flex-col gap-6 w-full max-w-[696px]"
         >
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <LabelInput labelText="Your name" placeholderText="Name" />
-            <LabelInput labelText="Your email" placeholderText="Email" />
+          <div className="h-full pr-6">
+            <p className="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
+              Thank you for visiting my portfolio! I'm a passionate developer
+              actively seeking new job opportunities. If you're in search of a
+              dedicated and skilled professional to join your team, I'd love to
+              hear from you. Let's discuss how I can contribute to your projects
+              and help you achieve your goals.
+            </p>
+            <ul className="mb-6 md:mb-0">
+              <li className="flex">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                  <MailOutlineIcon />
+                </div>
+                <div className="ml-4 mb-4">
+                  <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                    Email Address
+                  </h3>
+                  <p className="text-gray-600 dark:text-slate-400">
+                    mhamzazaheer1@gmail.com
+                  </p>
+                </div>
+              </li>
+              <li className="flex">
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                  <CallIcon />
+                </div>
+                <div className="ml-4 mb-4">
+                  <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                    Contact
+                  </h3>
+                  <p className="text-gray-600 dark:text-slate-400">
+                    +92 (332) 522-7999
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <LabelInput
-              labelText="Your message"
-              placeholderText="Message"
-              textarea
-            />
-          </div>
-
-          <Button secondary>Send Message</Button>
         </motion.div>
       </div>
 

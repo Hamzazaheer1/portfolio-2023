@@ -1,20 +1,43 @@
 // assets
-import aboutPageImg from "../assets/about-me-page.svg";
-import aboutIllustration from "../assets/about-illustration.svg";
-import facebookIcon from "../assets/facebook-icon.svg";
-import instagramIcon from "../assets/instagram-icon.svg";
-import twitterIcon from "../assets/twitter-icon.svg";
-import youtubeIcon from "../assets/youtube-icon.svg";
+import aboutPageImg from '../assets/about-me-page.svg';
+import aboutIllustration from '../assets/about-illustration.svg';
 
 // components
-import { SocialMediaIcon, Reveal } from "../components";
+import { Reveal } from '../components';
 
 // framer-motion
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 // utils
-import { fadeIn, scale } from "../utils/variants";
-import { transition } from "../utils/transition";
+import { fadeIn, scale } from '../utils/variants';
+import { transition } from '../utils/transition';
+
+const experience = [
+  {
+    date: {
+      from: 'March 2023',
+      to: 'Present',
+    },
+    company: 'Codify Pvt Limited',
+    description: 'React JS Developer',
+  },
+  {
+    date: {
+      from: 'October 2022',
+      to: 'January 2023',
+    },
+    company: 'HB Software',
+    description: 'Junior Frontend Developer',
+  },
+  {
+    date: {
+      from: 'August 2022',
+      to: 'September 2022',
+    },
+    company: 'STEM Career Programme PIEAS',
+    description: 'Web Content Administrator – Internee',
+  },
+];
 
 const About = () => {
   return (
@@ -23,9 +46,9 @@ const About = () => {
       className="min-h-screen flex items-center justify-center relative"
       style={{
         background: `url(${aboutPageImg})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
     >
       <div
@@ -43,27 +66,31 @@ const About = () => {
           </Reveal>
 
           <Reveal>
-            <p className="text-center xl:text-start text-base sm:text-lg text-textSecondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis incidunt quis praesentium voluptates et cupiditate
-              minus rem. Voluptatibus ullam beatae expedita voluptatum error,
-              voluptate deserunt impedit similique fuga recusandae sit.
+            <p className="text-center xl:text-start text-base sm:text-lg text-textSecondary mb-4">
+              I am a Computer Science graduate from Capital University of
+              Science and Technology in Islamabad, Pakistan. Currently, I am
+              working as a MERN (MongoDB, Express, React, Node.js) stack
+              developer.
             </p>
-          </Reveal>
 
-          <motion.div
-            variants={fadeIn("up")}
-            transition={transition()}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-            className="flex items-center justify-center xl:justify-start gap-6"
-          >
-            <SocialMediaIcon imgSrc={facebookIcon} title="Facebook" />
-            <SocialMediaIcon imgSrc={instagramIcon} title="Instagram" />
-            <SocialMediaIcon imgSrc={twitterIcon} title="Twitter" />
-            <SocialMediaIcon imgSrc={youtubeIcon} title="YouTube" />
-          </motion.div>
+            <h4 className="font-bold text-secondary text-2xl">Experience</h4>
+            <ol className="relative border-l border-gray-200 ">
+              {experience?.map((item, index) => (
+                <li className="mb-6 ml-4" key={index + 1}>
+                  <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white "></div>
+                  <time className="mb-1 text-sm font-normal leading-none text-gray-400">
+                    {item.date.from} - {item.date.to}
+                  </time>
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.company}
+                  </h3>
+                  <p className="mb-4 text-base font-normal text-gray-400">
+                    {item.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
         </div>
 
         <div className="flex-1 flex items-center justify-center">
